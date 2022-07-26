@@ -47,14 +47,11 @@ zone.addEventListener("dragover", (e) => {
 
 zone.addEventListener("drop", (e) => {
   e.preventDefault();
-  getFilesFromDataTransferItems(e.dataTransfer.items).then(
-    (files) => {
-      console.log(files);
-    },
-    {
-      recursive: true,
-    }
-  );
+  getFilesFromDataTransferItems(e.dataTransfer.items, {
+    recursive: true,
+  }).then((files) => {
+    console.log(files);
+  });
 });
 ```
 
